@@ -7,7 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
-        canvas { max-width: 400px; margin: auto; }
+        .chart-container { display: flex; justify-content: center; gap: 50px; }
+        canvas { max-width: 400px; }
         table { width: 80%; margin: 20px auto; border-collapse: collapse; }
         th, td { border: 1px solid black; padding: 8px; }
         th { background-color: #f2f2f2; }
@@ -15,7 +16,10 @@
 </head>
 <body>
     <h2>Proxy Tracker</h2>
-    <canvas id="proxyChart"></canvas>
+    <div class="chart-container">
+        <canvas id="proxyChart"></canvas>
+        <canvas id="debtChart"></canvas>
+    </div>
     
     <table>
         <thead>
@@ -40,19 +44,37 @@
     </table>
     
     <script>
-        const ctx = document.getElementById('proxyChart').getContext('2d');
+        const ctx1 = document.getElementById('proxyChart').getContext('2d');
+        const ctx2 = document.getElementById('debtChart').getContext('2d');
+        
         const proxyData = {
-            "nikhil": 1,
-            "ravindra": 1,
+            "nikhil (1)": 1,
+            "ravindra (1)": 1,
         };
         
-        new Chart(ctx, {
+        const debtData = {
+            "ali-77 (1)": 1,
+            "Divyansh-94 (1)": 1,
+        };
+        
+        new Chart(ctx1, {
             type: 'pie',
             data: {
                 labels: Object.keys(proxyData),
                 datasets: [{
                     data: Object.values(proxyData),
-                    backgroundColor: ['red', 'blue', 'green', 'orange']
+                    backgroundColor: ['red', 'blue']
+                }]
+            }
+        });
+        
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: ['green', 'orange']
                 }]
             }
         });
