@@ -6,19 +6,76 @@
     <title>Proxy Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        .chart-container { display: flex; justify-content: center; gap: 50px; }
-        canvas { max-width: 400px; }
-        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
-        th, td { border: 1px solid black; padding: 8px; }
-        th { background-color: #f2f2f2; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Reduced gap for side-by-side layout */
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 45%; /* Adjusted width for side-by-side layout */
+            max-width: 400px;
+        }
+        .chart-card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
     <h2>Proxy Tracker</h2>
     <div class="chart-container">
-        <canvas id="proxyChart"></canvas>
-        <canvas id="debtChart"></canvas>
+        <div class="chart-card">
+            <h3>Credits</h3>
+            <canvas id="proxyChart"></canvas>
+        </div>
+        <div class="chart-card">
+            <h3>Debt List</h3>
+            <canvas id="debtChart"></canvas>
+        </div>
     </div>
     
     <table>
@@ -63,8 +120,24 @@
                 labels: Object.keys(proxyData),
                 datasets: [{
                     data: Object.values(proxyData),
-                    backgroundColor: ['red', 'blue']
+                    backgroundColor: ['#4a90e2', '#50e3c2']
                 }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    }
+                }
             }
         });
         
@@ -74,8 +147,24 @@
                 labels: Object.keys(debtData),
                 datasets: [{
                     data: Object.values(debtData),
-                    backgroundColor: ['green', 'orange']
+                    backgroundColor: ['#e27c7c', '#f5a623']
                 }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: {
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    }
+                }
             }
         });
     </script>
