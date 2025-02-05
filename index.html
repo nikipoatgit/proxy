@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        canvas { max-width: 400px; margin: auto; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2>Proxy Tracker</h2>
+    <canvas id="proxyChart"></canvas>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Proxy For</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTableBody">
+            <tr>
+                <td>2025-02-05</td>
+                <td>John Doe</td>
+                <td>Jane Smith</td>
+            </tr>
+            <tr>
+                <td>2025-02-05</td>
+                <td>Alice Brown</td>
+                <td>Robert White</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        const ctx = document.getElementById('proxyChart').getContext('2d');
+        const proxyData = {
+            "John Doe": 3,
+            "Alice Brown": 5,
+            "Michael Green": 2,
+            "Emily Davis": 4
+        };
+        
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: ['red', 'blue', 'green', 'orange']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
