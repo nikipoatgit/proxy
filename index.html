@@ -116,77 +116,75 @@
         </tbody>
     </table>
     
-    <script>
-        const ctx1 = document.getElementById('proxyChart').getContext('2d');
-        const ctx2 = document.getElementById('debtChart').getContext('2d');
-        
-        const proxyData = {
-            "nikhil (3)": 3,
-            "ravindra (1)": 1,
-            "arya (1)": 1,
-            "sangram (1)": 1,
-        };
-        
-        const debtData = {
-            "ali-77 (-1)": 1,
-            "Divyansh-94 (-1)": 1,
-            "shruti-53 (-2)": 2,
-            "pranmay-53 (-1)": 1,
-        };
-        
-        new Chart(ctx1, {
-            type: 'pie',
-            data: {
-                labels: Object.keys(proxyData),
-                datasets: [{
-                    data: Object.values(proxyData),
-                    backgroundColor: ['#4a90e2', '#50e3c2']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Credits',
-                        font: {
-                            size: 16,
-                            weight: 'bold'
-                        }
-                    }
+   <script>
+    const ctx1 = document.getElementById('proxyChart').getContext('2d');
+    const ctx2 = document.getElementById('debtChart').getContext('2d');
+
+    const proxyData = {
+        "nikhil (3)": 3,
+        "ravindra (1)": 1,
+        "arya (1)": 1,
+        "sangram (1)": 1,
+    };
+
+    const debtData = {
+        "ali-77 (-1)": 1,
+        "Divyansh-94 (-1)": 1,
+        "shruti-53 (-2)": 2,
+        "pranmay-53 (-1)": 1,
+    };
+
+    // Function to generate random colors
+    function generateColors(count) {
+        return Array.from({ length: count }, () => 
+            `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
+        );
+    }
+
+    new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(proxyData),
+            datasets: [{
+                data: Object.values(proxyData),
+                backgroundColor: generateColors(Object.keys(proxyData).length)
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: {
+                    display: true,
+                    text: 'Credits',
+                    font: { size: 16, weight: 'bold' }
                 }
             }
-        });
-        
-        new Chart(ctx2, {
-            type: 'pie',
-            data: {
-                labels: Object.keys(debtData),
-                datasets: [{
-                    data: Object.values(debtData),
-                    backgroundColor: ['#e27c7c', '#f5a623']
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Debt List',
-                        font: {
-                            size: 16,
-                            weight: 'bold'
-                        }
-                    }
+        }
+    });
+
+    new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(debtData),
+            datasets: [{
+                data: Object.values(debtData),
+                backgroundColor: generateColors(Object.keys(debtData).length)
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { position: 'bottom' },
+                title: {
+                    display: true,
+                    text: 'Debt List',
+                    font: { size: 16, weight: 'bold' }
                 }
             }
-        });
-    </script>
+        }
+    });
+   </script>
+    
 </body>
 </html>
