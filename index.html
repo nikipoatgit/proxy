@@ -84,11 +84,9 @@
     <h2>Proxy Tracker</h2>
     <div class="chart-container">
         <div class="chart-card">
-            <h3>Credits</h3>
             <canvas id="proxyChart"></canvas>
         </div>
         <div class="chart-card">
-            <h3>Debt</h3>
             <canvas id="debtChart"></canvas>
         </div>
     </div>
@@ -155,8 +153,10 @@
             responsive: true,
             plugins: {
                 legend: { position: 'bottom' },
-                title: {
-                    display: false
+                 title: {
+                    display: true,
+                    text: 'Credit',
+                    font: { size: 14, weight: 'bold' }
                 }
                 }
             }
@@ -176,8 +176,10 @@
             responsive: true,
             plugins: {
                 legend: { position: 'bottom' },
-                 title: {
-                    display: false
+                  title: {
+                    display: true,
+                    text: 'Debt',
+                    font: { size: 14, weight: 'bold' }
                 }
             }
         }
