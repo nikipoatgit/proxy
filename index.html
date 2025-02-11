@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Proxy Tracker</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -11,46 +11,48 @@
             background-color: #f4f4f9;
             color: #333;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
         h2 {
             color: #4a90e2;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 22px;
         }
         .chart-container {
             display: flex;
-            justify-content: center;
-            gap: 20px; /* Reduced gap for side-by-side layout */
-            flex-wrap: wrap;
-            margin-bottom: 40px;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
         }
         .chart-card {
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 45%; /* Adjusted width for side-by-side layout */
-            max-width: 400px;
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
         }
         .chart-card h3 {
             margin-top: 0;
-            color: #333;
+            font-size: 18px;
         }
         canvas {
             max-width: 100%;
         }
         table {
-            width: 80%;
-            margin: 20px auto;
+            width: 100%;
+            margin: 15px 0;
             border-collapse: collapse;
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 12px;
+            padding: 10px;
             text-align: left;
         }
         th {
@@ -63,10 +65,22 @@
         tr:hover {
             background-color: #f1f1f1;
         }
+        @media (min-width: 768px) {
+            .chart-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .chart-card {
+                width: 45%;
+            }
+            table {
+                width: 80%;
+            }
+        }
     </style>
 </head>
 <body>
-    <p>Developed by nikhil in collaboration with the DeepSeek and ChatGPT.</p>
+    <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
     <h2>Proxy Tracker</h2>
     <div class="chart-container">
         <div class="chart-card">
@@ -88,51 +102,15 @@
             </tr>
         </thead>
         <tbody id="proxyTableBody">
-            <tr>
-                <td>2025-02-11</td>
-                <td>kewal</td>
-                <td>niki : phy </td>
-            </tr>
-            <tr>
-                <td>2025-02-11</td>
-                <td>ankit</td>
-                <td>ali : em </td>
-            </tr>
-            <tr>
-                <td>2025-02-11</td>
-                <td>shtuti</td>
-                <td>111 : em</td>
-            </tr>
-            <tr>
-                <td>2025-02-11</td>
-                <td>Aarya</td>
-                <td>niki : em</td>
-            </tr>
-            <tr>
-                <td>2025-02-10</td>
-                <td>Aarya</td>
-                <td>shruti-59</td>
-            </tr>
-            <tr>
-                <td>2025-02-10</td>
-                <td>niki</td>
-                <td>shruti & pranmay : cs</td>
-            </tr>
-            <tr>
-                <td>2025-02-10</td>
-                <td>sangram</td>
-                <td>ankit : cs</td>
-            </tr>
-            <tr>
-                <td>2025-02-05</td>
-                <td>nikhil-46</td>
-                <td>ali-77</td>
-            </tr>
-            <tr>
-                <td>2025-02-05</td>
-                <td>ravindra</td>
-                <td>Divyansh-94</td>
-            </tr>
+            <tr><td>2025-02-11</td><td>Kewal</td><td>Niki : PHY</td></tr>
+            <tr><td>2025-02-11</td><td>Ankit</td><td>Ali : EM</td></tr>
+            <tr><td>2025-02-11</td><td>Shtuti</td><td>111 : EM</td></tr>
+            <tr><td>2025-02-11</td><td>Aarya</td><td>Niki : EM</td></tr>
+            <tr><td>2025-02-10</td><td>Aarya</td><td>Shruti-59</td></tr>
+            <tr><td>2025-02-10</td><td>Niki</td><td>Shruti & Pranmay : CS</td></tr>
+            <tr><td>2025-02-10</td><td>Sangram</td><td>Ankit : CS</td></tr>
+            <tr><td>2025-02-05</td><td>Nikhil-46</td><td>Ali-77</td></tr>
+            <tr><td>2025-02-05</td><td>Ravindra</td><td>Divyansh-94</td></tr>
         </tbody>
     </table>
     
@@ -141,23 +119,22 @@
     const ctx2 = document.getElementById('debtChart').getContext('2d');
 
     const proxyData = {
-        "nikhil (1)": 1,
-        "ravindra (1)": 1,
-        "arya (2)": 2,
-        "sangram (1)": 1,
-        "ankit (0)": 0,
-        "kewal (1)": 1,
+        "Nikhil (1)": 1,
+        "Ravindra (1)": 1,
+        "Arya (2)": 2,
+        "Sangram (1)": 1,
+        "Ankit (0)": 0,
+        "Kewal (1)": 1,
     };
 
     const debtData = {
-        "ali-77 (-2)": 2,
+        "Ali-77 (-2)": 2,
         "Divyansh-94 (-1)": 1,
-        "shruti-53 (-1)": 1,
-        "pranmay-53 (-1)": 1,
+        "Shruti-53 (-1)": 1,
+        "Pranmay-53 (-1)": 1,
         "111 (-1)": 1,
     };
 
-    // Function to generate random colors
     function generateColors(count) {
         return Array.from({ length: count }, () => 
             `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
@@ -180,7 +157,7 @@
                 title: {
                     display: true,
                     text: 'Credits',
-                    font: { size: 16, weight: 'bold' }
+                    font: { size: 14, weight: 'bold' }
                 }
             }
         }
@@ -202,12 +179,11 @@
                 title: {
                     display: true,
                     text: 'Debt List',
-                    font: { size: 16, weight: 'bold' }
+                    font: { size: 14, weight: 'bold' }
                 }
             }
         }
     });
    </script>
-    
 </body>
 </html>
