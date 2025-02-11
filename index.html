@@ -117,22 +117,22 @@
     const ctx1 = document.getElementById('proxyChart').getContext('2d');
     const ctx2 = document.getElementById('debtChart').getContext('2d');
 
-    const proxyData = {
-        "Nikhil (0)": 0,
-        "Ravindra (1)": 1,
-        "Arya (2)": 2,
-        "Sangram (1)": 1,
-        "Ankit (1)": 1,
-        "Kewal (1)": 1,
-    };
+const proxyData = {
+    "Nikhil (1)": 1,
+    "Ravindra (1)": 1,
+    "Arya (2)": 2,
+    "Sangram (1)": 1,
+    "Ankit (0)": 0,
+    "Kewal (1)": 1,
+};
 
-    const debtData = {
-        "Ali-77 (-2)": 2,
-        "Divyansh-94 (-1)": 1,
-        "Shruti-53 (-1)": 1,
-        "Pranmay-53 (-1)": 1,
-        "111 (-1)": 1,
-    };
+const debtData = {
+    "Ali-77 (-2)": 2,
+    "Divyansh-94 (-1)": 1,
+    "Shruti-53 (-1)": 1,
+    "Pranmay-53 (-1)": 1,
+    "111 (-1)": 1,
+};
 
     function generateColors(count) {
         return Array.from({ length: count }, () => 
