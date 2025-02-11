@@ -43,6 +43,7 @@
         }
         table {
             width: 100%;
+            max-width: 800px;
             margin: 15px auto;
             border-collapse: collapse;
             background: white;
@@ -73,9 +74,6 @@
             .chart-card {
                 width: 45%;
             }
-            table {
-                width: 80%;
-            }
         }
     </style>
 </head>
@@ -83,11 +81,11 @@
     <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
     <h2>Proxy Tracker</h2>
     <div class="chart-container">
-        <div class="chart-card">
-            <canvas id="proxyChart"></canvas>
+        <div class="chart-card" role="region" aria-label="Credits Chart">
+            <canvas id="proxyChart" aria-label="Credits Pie Chart"></canvas>
         </div>
-        <div class="chart-card">
-            <canvas id="debtChart"></canvas>
+        <div class="chart-card" role="region" aria-label="Debt Chart">
+            <canvas id="debtChart" aria-label="Debt Pie Chart"></canvas>
         </div>
     </div>
     
@@ -100,16 +98,7 @@
             </tr>
         </thead>
         <tbody id="proxyTableBody">
-             <tr><td>2025-02-11</td><td>ankit</td><td>Niki : Math</td></tr>
-            <tr><td>2025-02-11</td><td>Kewal</td><td>Niki : PHY</td></tr>
-            <tr><td>2025-02-11</td><td>Ankit</td><td>Ali : EM</td></tr>
-            <tr><td>2025-02-11</td><td>Shtuti</td><td>111 : EM</td></tr>
-            <tr><td>2025-02-11</td><td>Aarya</td><td>Niki : EM</td></tr>
-            <tr><td>2025-02-10</td><td>Aarya</td><td>Shruti-59</td></tr>
-            <tr><td>2025-02-10</td><td>Niki</td><td>Shruti & Pranmay : CS</td></tr>
-            <tr><td>2025-02-10</td><td>Sangram</td><td>Ankit : CS</td></tr>
-            <tr><td>2025-02-05</td><td>Nikhil-46</td><td>Ali-77</td></tr>
-            <tr><td>2025-02-05</td><td>Ravindra</td><td>Divyansh-94</td></tr>
+            <!-- Rows will be populated by JavaScript -->
         </tbody>
     </table>
     
@@ -117,73 +106,99 @@
     const ctx1 = document.getElementById('proxyChart').getContext('2d');
     const ctx2 = document.getElementById('debtChart').getContext('2d');
 
-const proxyData = {
-    "Nikhil (1)": 1,
-    "Ravindra (1)": 1,
-    "Arya (2)": 2,
-    "Sangram (1)": 1,
-    "Ankit (0)": 0,
-    "Kewal (1)": 1,
-};
+    const proxyData = {
+        "Nikhil (1)": 1,
+        "Ravindra (1)": 1,
+        "Arya (2)": 2,
+        "Sangram (1)": 1,
+        "Ankit (0)": 0,
+        "Kewal (1)": 1,
+    };
 
-const debtData = {
-    "Ali-77 (-2)": 2,
-    "Divyansh-94 (-1)": 1,
-    "Shruti-53 (-1)": 1,
-    "Pranmay-53 (-1)": 1,
-    "111 (-1)": 1,
-};
+    const debtData = {
+        "Ali-77 (-2)": 2,
+        "Divyansh-94 (-1)": 1,
+        "Shruti-53 (-1)": 1,
+        "Pranmay-53 (-1)": 1,
+        "111 (-1)": 1,
+    };
 
-    function generateColors(count) {
-        return Array.from({ length: count }, () => 
-            `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`
-        );
+    function generateColors(labels) {
+        const colors = [
+            '#4e79a7', '#f28e2c', '#e15759', '#76b7b2', '#59a14f',
+            '#edc949', '#af7aa1', '#ff9da7', '#9c755f', '#bab0ac'
+        ];
+        return labels.map((label, index) => colors[index % colors.length]);
     }
 
-    new Chart(ctx1, {
-        type: 'pie',
-        data: {
-            labels: Object.keys(proxyData),
-            datasets: [{
-                data: Object.values(proxyData),
-                backgroundColor: generateColors(Object.keys(proxyData).length)
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { position: 'bottom' },
-                 title: {
-                    display: true,
-                    text: 'Credit',
-                    font: { size: 14, weight: 'bold' }
-                }
+    try {
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: generateColors(Object.keys(proxyData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: { size: 14, weight: 'bold' }
+                    }
                 }
             }
-        }
-    });
+        });
 
-    new Chart(ctx2, {
-        type: 'pie',
-        data: {
-            labels: Object.keys(debtData),
-            datasets: [{
-                data: Object.values(debtData),
-                backgroundColor: generateColors(Object.keys(debtData).length)
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: { position: 'bottom' },
-                  title: {
-                    display: true,
-                    text: 'Debt',
-                    font: { size: 14, weight: 'bold' }
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: generateColors(Object.keys(debtData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: { size: 14, weight: 'bold' }
+                    }
                 }
             }
-        }
-    });
+        });
+    } catch (error) {
+        console.error("Error rendering charts:", error);
+    }
+
+    const tableData = [
+        { date: "2025-02-11", student: "Kewal", proxyFor: "Niki : PHY" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Ali : EM" },
+        { date: "2025-02-11", student: "Shtuti", proxyFor: "111 : EM" },
+        { date: "2025-02-11", student: "Aarya", proxyFor: "Niki : EM" },
+        { date: "2025-02-10", student: "Aarya", proxyFor: "Shruti-59" },
+        { date: "2025-02-10", student: "Niki", proxyFor: "Shruti & Pranmay : CS" },
+        { date: "2025-02-10", student: "Sangram", proxyFor: "Ankit : CS" },
+        { date: "2025-02-05", student: "Nikhil-46", proxyFor: "Ali-77" },
+        { date: "2025-02-05", student: "Ravindra", proxyFor: "Divyansh-94" },
+    ];
+
+    const tbody = document.getElementById('proxyTableBody');
+    tbody.innerHTML = tableData.map(row => `
+        <tr>
+            <td>${row.date}</td>
+            <td>${row.student}</td>
+            <td>${row.proxyFor}</td>
+        </tr>
+    `).join('');
    </script>
 </body>
 </html>
