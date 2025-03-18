@@ -230,7 +230,1197 @@
         <tr>
             <td>${row.date}</td>
             <td>${row.student}</td>
+            <td>${row.pro<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proxy Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .chart-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .chart-card {
+                width: 45%;
+            }
+        }
+        .poem {
+         font-family: 'Caveat', sans-serif;
+        white-space: pre-wrap;
+        font-size: 0.7 em;
+        line-height: 1;
+        margin: 0 auto;
+        padding: 10px 2px ;
+    }
+    </style>
+</head>
+<body>
+    <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
+    <div class="chart-container">
+        <div class="chart-card" role="region" aria-label="Credits Chart">
+            <canvas id="proxyChart" aria-label="Credits Pie Chart"></canvas>
+        </div>
+        <div class="chart-card" role="region" aria-label="Debt Chart">
+            <canvas id="debtChart" aria-label="Debt Pie Chart"></canvas>
+        </div>
+    </div>
+     
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Proxy For</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTableBody">
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+    <div class="poem">
+    Rule X : Should A mortal destin with proxy, that proxy shall be granted one credit—a mark of borrowed power, etched with ledger.
+
+    Rule XI : Yet one—surrenders their proxy shall inherit a debt of will, mortally bound—until balance is restored. Their name become proxy’s authority.
+
+    rule XII : A debt incurred—be lifted only by assigning an equivalent magnitude of proxy to another. Until—original debtor remains bound to the obligation.
+</div>
+    
+   <script>
+    const ctx1 = document.getElementById('proxyChart').getContext('2d');
+    const ctx2 = document.getElementById('debtChart').getContext('2d');
+
+    const proxyData = {
+        "niki (1)": 1,
+        "Ravindra-78 (0)": 0,
+        "Arya-93 (1)": 1,
+        "Sangram:91 (4)": 4,
+        "Ankit (1)": 1,
+        "Kewal (1)": 1,
+        "Goyal (1)": 1,
+        "priyanshu (1)": 1,
+        "Dvaynsh-94 (1)": 1,
+    };
+
+    const debtData = {
+        "Shruti-59 (-1)": 1,
+        "Ali-77 (-3)": 3
+        "Panmay-53 (-2)": 2,
+        "shari:88 (-5)" : 5,
+    };
+
+    function generateColors(labels) {
+        const colors = [
+            '#4e79a7', '#f28e2c', '#e15759', '#76b7b2', '#59a14f',
+            '#edc949', '#af7aa1', '#ff9da7', '#9c755f', '#bab0ac'
+        ];
+        return labels.map((label, index) => colors[index % colors.length]);
+    }
+
+    try {
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: generateColors(Object.keys(proxyData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proxy Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .chart-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .chart-card {
+                width: 45%;
+            }
+        }
+        .poem {
+         font-family: 'Caveat', sans-serif;
+        white-space: pre-wrap;
+        font-size: 0.7 em;
+        line-height: 1;
+        margin: 0 auto;
+        padding: 10px 2px ;
+    }
+    </style>
+</head>
+<body>
+    <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
+    <div class="chart-container">
+        <div class="chart-card" role="region" aria-label="Credits Chart">
+            <canvas id="proxyChart" aria-label="Credits Pie Chart"></canvas>
+        </div>
+        <div class="chart-card" role="region" aria-label="Debt Chart">
+            <canvas id="debtChart" aria-label="Debt Pie Chart"></canvas>
+        </div>
+    </div>
+     
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Proxy For</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTableBody">
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+    <div class="poem">
+    Rule X : Should A mortal destin with proxy, that proxy shall be granted one credit—a mark of borrowed power, etched with ledger.
+
+    Rule XI : Yet one—surrenders their proxy shall inherit a debt of will, mortally bound—until balance is restored. Their name become proxy’s authority.
+
+    rule XII : A debt incurred—be lifted only by assigning an equivalent magnitude of proxy to another. Until—original debtor remains bound to the obligation.
+</div>
+    
+   <script>
+    const ctx1 = document.getElementById('proxyChart').getContext('2d');
+    const ctx2 = document.getElementById('debtChart').getContext('2d');
+
+    const proxyData = {
+        "niki (1)": 1,
+        "Ravindra-78 (0)": 0,
+        "Arya-93 (1)": 1,
+        "Sangram:91 (4)": 4,
+        "Ankit (1)": 1,
+        "Kewal (1)": 1,
+        "Goyal (1)": 1,
+        "priyanshu (1)": 1,
+        "Dvaynsh-94 (1)": 1,
+    };
+
+    const debtData = {
+        "Shruti-59 (-1)": 1,
+        "Ali-77 (-3)": 3
+        "Panmay-53 (-2)": 2,
+        "shari:88 (-5)" : 5,
+    };
+
+    function generateColors(labels) {
+        const colors = [
+            '#4e79a7', '#f28e2c', '#e15759', '#76b7b2', '#59a14f',
+            '#edc949', '#af7aa1', '#ff9da7', '#9c755f', '#bab0ac'
+        ];
+        return labels.map((label, index) => colors[index % colors.length]);
+    }
+
+    try {
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: generateColors(Object.keys(proxyData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: generateColors(Object.keys(debtData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Error rendering charts:", error);
+    }
+
+    const tableData = 
+        { date: "2025-03-17", student: "ali", proxyFor: "93" },
+        { date: "2025-03-17", student: "divya", proxyFor: "59" },
+        { date: "2025-03-17", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "ankit", proxyFor: "77" },
+        { date: "2025-03-11", student: "arya", proxyFor: "78" },
+        { date: "2025-03-11", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "divyansh", proxyFor: "91" },
+        { date: "2025-03-10", student: "divya ", proxyFor: "59" },
+        { date: "2025-03-10", student: "songram", proxyFor: "111 and 94" },
+        { date: "2025-03-10", student: "niki ", proxyFor: "88" },
+        { date: "2025-03-05", student: "shruti", proxyFor: "pran-53" },
+        { date: "2025-03-05", student: "songram", proxyFor: "anki-65 :Cs" },
+        { date: "2025-03-04", student: "songram", proxyFor: "88 " },
+        { date: "2025-03-03", student: "shruti", proxyFor: "93 arya : EM" },
+        { date: "2025-03-03", student: "Priyanshu", proxyFor: "88-shari : EM" },
+        { date: "2025-03-03", student: "adatiya", proxyFor: "65-anki : EM" },
+        { date: "2025-02-12", student: "ankit", proxyFor: "shari-88 : EM" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Niki : MTH" },
+        { date: "2025-02-11", student: "Kewal", proxyFor: "Niki : PHY" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Ali : EM" },
+        { date: "2025-02-11", student: "Shtuti", proxyFor: "111 : EM" },
+        { date: "2025-02-11", student: "Aarya", proxyFor: "Niki : EM" },
+        { date: "2025-02-10", student: "Aarya", proxyFor: "Shruti-59" },
+        { date: "2025-02-10", student: "niki", proxyFor: "Shruti & Pranmay : CS" },
+        { date: "2025-02-10", student: "Sangram", proxyFor: "Ankit : CS" },
+        { date: "2025-02-05", student: "niki-46", proxyFor: "Ali-77" },
+        { date: "2025-02-05", student: "Ravindra", proxyFor: "Divyansh-94" },
+    ];
+
+    const tbody = document.getElementById('proxyTableBody');
+    tbody.innerHTML = tableData.map(row => `
+        <tr>
+            <td>${row.date}</td>
+            <td>${row.student}</td>
+            <td>${row.pro<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proxy Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .chart-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .chart-card {
+                width: 45%;
+            }
+        }
+        .poem {
+         font-family: 'Caveat', sans-serif;
+        white-space: pre-wrap;
+        font-size: 0.7 em;
+        line-height: 1;
+        margin: 0 auto;
+        padding: 10px 2px ;
+    }
+    </style>
+</head>
+<body>
+    <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
+    <div class="chart-container">
+        <div class="chart-card" role="region" aria-label="Credits Chart">
+            <canvas id="proxyChart" aria-label="Credits Pie Chart"></canvas>
+        </div>
+        <div class="chart-card" role="region" aria-label="Debt Chart">
+            <canvas id="debtChart" aria-label="Debt Pie Chart"></canvas>
+        </div>
+    </div>
+     
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Proxy For</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTableBody">
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+    <div class="poem">
+    Rule X : Should A mortal destin with proxy, that proxy shall be granted one credit—a mark of borrowed power, etched with ledger.
+
+    Rule XI : Yet one—surrenders their proxy shall inherit a debt of will, mortally bound—until balance is restored. Their name become proxy’s authority.
+
+    rule XII : A debt incurred—be lifted only by assigning an equivalent magnitude of proxy to another. Until—original debtor remains bound to the obligation.
+</div>
+    
+   <script>
+    const ctx1 = document.getElementById('proxyChart').getContext('2d');
+    const ctx2 = document.getElementById('debtChart').getContext('2d');
+
+    const proxyData = {
+        "niki (1)": 1,
+        "Ravindra-78 (0)": 0,
+        "Arya-93 (1)": 1,
+        "Sangram:91 (4)": 4,
+        "Ankit (1)": 1,
+        "Kewal (1)": 1,
+        "Goyal (1)": 1,
+        "priyanshu (1)": 1,
+        "Dvaynsh-94 (1)": 1,
+    };
+
+    const debtData = {
+        "Shruti-59 (-1)": 1,
+        "Ali-77 (-3)": 3
+        "Panmay-53 (-2)": 2,
+        "shari:88 (-5)" : 5,
+    };
+
+    function generateColors(labels) {
+        const colors = [
+            '#4e79a7', '#f28e2c', '#e15759', '#76b7b2', '#59a14f',
+            '#edc949', '#af7aa1', '#ff9da7', '#9c755f', '#bab0ac'
+        ];
+        return labels.map((label, index) => colors[index % colors.length]);
+    }
+
+    try {
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: generateColors(Object.keys(proxyData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: generateColors(Object.keys(debtData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Error rendering charts:", error);
+    }
+
+    const tableData = 
+        { date: "2025-03-17", student: "ali", proxyFor: "93" },
+        { date: "2025-03-17", student: "divya", proxyFor: "59" },
+        { date: "2025-03-17", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "ankit", proxyFor: "77" },
+        { date: "2025-03-11", student: "arya", proxyFor: "78" },
+        { date: "2025-03-11", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "divyansh", proxyFor: "91" },
+        { date: "2025-03-10", student: "divya ", proxyFor: "59" },
+        { date: "2025-03-10", student: "songram", proxyFor: "111 and 94" },
+        { date: "2025-03-10", student: "niki ", proxyFor: "88" },
+        { date: "2025-03-05", student: "shruti", proxyFor: "pran-53" },
+        { date: "2025-03-05", student: "songram", proxyFor: "anki-65 :Cs" },
+        { date: "2025-03-04", student: "songram", proxyFor: "88 " },
+        { date: "2025-03-03", student: "shruti", proxyFor: "93 arya : EM" },
+        { date: "2025-03-03", student: "Priyanshu", proxyFor: "88-shari : EM" },
+        { date: "2025-03-03", student: "adatiya", proxyFor: "65-anki : EM" },
+        { date: "2025-02-12", student: "ankit", proxyFor: "shari-88 : EM" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Niki : MTH" },
+        { date: "2025-02-11", student: "Kewal", proxyFor: "Niki : PHY" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Ali : EM" },
+        { date: "2025-02-11", student: "Shtuti", proxyFor: "111 : EM" },
+        { date: "2025-02-11", student: "Aarya", proxyFor: "Niki : EM" },
+        { date: "2025-02-10", student: "Aarya", proxyFor: "Shruti-59" },
+        { date: "2025-02-10", student: "niki", proxyFor: "Shruti & Pranmay : CS" },
+        { date: "2025-02-10", student: "Sangram", proxyFor: "Ankit : CS" },
+        { date: "2025-02-05", student: "niki-46", proxyFor: "Ali-77" },
+        { date: "2025-02-05", student: "Ravindra", proxyFor: "Divyansh-94" },
+    ];
+
+    const tbody = document.getElementById('proxyTableBody');
+    tbody.innerHTML = tableData.map(row => `
+        <tr>
+            <td>${row.date}</td>
+            <td>${row.student}</td>
             <td>${row.proxyFor}</td>
+        </tr>
+    `).join('');
+   </script>
+</body>
+</html>
+xyFor}</td>
+        </tr>
+    `).join('');
+   </script>
+</body>
+</html>
+        text: 'Credits',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: generateColors(Object.keys(debtData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+    } catch (error) {<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proxy Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .chart-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .chart-card {
+                width: 45%;
+            }
+        }
+        .poem {
+         font-family: 'Caveat', sans-serif;
+        white-space: pre-wrap;
+        font-size: 0.7 em;
+        line-height: 1;
+        margin: 0 auto;
+        padding: 10px 2px ;
+    }
+    </style>
+</head>
+<body>
+    <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
+    <div class="chart-container">
+        <div class="chart-card" role="region" aria-label="Credits Chart">
+            <canvas id="proxyChart" aria-label="Credits Pie Chart"></canvas>
+        </div>
+        <div class="chart-card" role="region" aria-label="Debt Chart">
+            <canvas id="debtChart" aria-label="Debt Pie Chart"></canvas>
+        </div>
+    </div>
+     
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Proxy For</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTableBody">
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+    <div class="poem">
+    Rule X : Should A mortal destin with proxy, that proxy shall be granted one credit—a mark of borrowed power, etched with ledger.
+
+    Rule XI : Yet one—surrenders their proxy shall inherit a debt of will, mortally bound—until balance is restored. Their name become proxy’s authority.
+
+    rule XII : A debt incurred—be lifted only by assigning an equivalent magnitude of proxy to another. Until—original debtor remains bound to the obligation.
+</div>
+    
+   <script>
+    const ctx1 = document.getElementById('proxyChart').getContext('2d');
+    const ctx2 = document.getElementById('debtChart').getContext('2d');
+
+    const proxyData = {
+        "niki (1)": 1,
+        "Ravindra-78 (0)": 0,
+        "Arya-93 (1)": 1,
+        "Sangram:91 (4)": 4,
+        "Ankit (1)": 1,
+        "Kewal (1)": 1,
+        "Goyal (1)": 1,
+        "priyanshu (1)": 1,
+        "Dvaynsh-94 (1)": 1,
+    };
+
+    const debtData = {
+        "Shruti-59 (-1)": 1,
+        "Ali-77 (-3)": 3
+        "Panmay-53 (-2)": 2,
+        "shari:88 (-5)" : 5,
+    };
+
+    function generateColors(labels) {
+        const colors = [
+            '#4e79a7', '#f28e2c', '#e15759', '#76b7b2', '#59a14f',
+            '#edc949', '#af7aa1', '#ff9da7', '#9c755f', '#bab0ac'
+        ];
+        return labels.map((label, index) => colors[index % colors.length]);
+    }
+
+    try {
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: generateColors(Object.keys(proxyData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: generateColors(Object.keys(debtData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Error rendering charts:", error);
+    }
+
+    const tableData = 
+        { date: "2025-03-17", student: "ali", proxyFor: "93" },
+        { date: "2025-03-17", student: "divya", proxyFor: "59" },
+        { date: "2025-03-17", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "ankit", proxyFor: "77" },
+        { date: "2025-03-11", student: "arya", proxyFor: "78" },
+        { date: "2025-03-11", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "divyansh", proxyFor: "91" },
+        { date: "2025-03-10", student: "divya ", proxyFor: "59" },
+        { date: "2025-03-10", student: "songram", proxyFor: "111 and 94" },
+        { date: "2025-03-10", student: "niki ", proxyFor: "88" },
+        { date: "2025-03-05", student: "shruti", proxyFor: "pran-53" },
+        { date: "2025-03-05", student: "songram", proxyFor: "anki-65 :Cs" },
+        { date: "2025-03-04", student: "songram", proxyFor: "88 " },
+        { date: "2025-03-03", student: "shruti", proxyFor: "93 arya : EM" },
+        { date: "2025-03-03", student: "Priyanshu", proxyFor: "88-shari : EM" },
+        { date: "2025-03-03", student: "adatiya", proxyFor: "65-anki : EM" },
+        { date: "2025-02-12", student: "ankit", proxyFor: "shari-88 : EM" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Niki : MTH" },
+        { date: "2025-02-11", student: "Kewal", proxyFor: "Niki : PHY" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Ali : EM" },
+        { date: "2025-02-11", student: "Shtuti", proxyFor: "111 : EM" },
+        { date: "2025-02-11", student: "Aarya", proxyFor: "Niki : EM" },
+        { date: "2025-02-10", student: "Aarya", proxyFor: "Shruti-59" },
+        { date: "2025-02-10", student: "niki", proxyFor: "Shruti & Pranmay : CS" },
+        { date: "2025-02-10", student: "Sangram", proxyFor: "Ankit : CS" },
+        { date: "2025-02-05", student: "niki-46", proxyFor: "Ali-77" },
+        { date: "2025-02-05", student: "Ravindra", proxyFor: "Divyansh-94" },
+    ];
+
+    const tbody = document.getElementById('proxyTableBody');
+    tbody.innerHTML = tableData.map(row => `
+        <tr>
+            <td>${row.date}</td>
+            <td>${row.student}</td>
+            <td>${row.pro<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proxy Tracker</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+        .chart-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 15px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .chart-card {
+                width: 45%;
+            }
+        }
+        .poem {
+         font-family: 'Caveat', sans-serif;
+        white-space: pre-wrap;
+        font-size: 0.7 em;
+        line-height: 1;
+        margin: 0 auto;
+        padding: 10px 2px ;
+    }
+    </style>
+</head>
+<body>
+    <p>Developed by Nikhil in collaboration with DeepSeek and ChatGPT.</p>
+    <div class="chart-container">
+        <div class="chart-card" role="region" aria-label="Credits Chart">
+            <canvas id="proxyChart" aria-label="Credits Pie Chart"></canvas>
+        </div>
+        <div class="chart-card" role="region" aria-label="Debt Chart">
+            <canvas id="debtChart" aria-label="Debt Pie Chart"></canvas>
+        </div>
+    </div>
+     
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Student</th>
+                <th>Proxy For</th>
+            </tr>
+        </thead>
+        <tbody id="proxyTableBody">
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+    <div class="poem">
+    Rule X : Should A mortal destin with proxy, that proxy shall be granted one credit—a mark of borrowed power, etched with ledger.
+
+    Rule XI : Yet one—surrenders their proxy shall inherit a debt of will, mortally bound—until balance is restored. Their name become proxy’s authority.
+
+    rule XII : A debt incurred—be lifted only by assigning an equivalent magnitude of proxy to another. Until—original debtor remains bound to the obligation.
+</div>
+    
+   <script>
+    const ctx1 = document.getElementById('proxyChart').getContext('2d');
+    const ctx2 = document.getElementById('debtChart').getContext('2d');
+
+    const proxyData = {
+        "niki (1)": 1,
+        "Ravindra-78 (0)": 0,
+        "Arya-93 (1)": 1,
+        "Sangram:91 (4)": 4,
+        "Ankit (1)": 1,
+        "Kewal (1)": 1,
+        "Goyal (1)": 1,
+        "priyanshu (1)": 1,
+        "Dvaynsh-94 (1)": 1,
+    };
+
+    const debtData = {
+        "Shruti-59 (-1)": 1,
+        "Ali-77 (-3)": 3 ,
+        "Panmay-53 (-2)": 2,
+        "shari:88 (-5)" : 5,
+    };
+
+    function generateColors(labels) {
+        const colors = [
+            '#4e79a7', '#f28e2c', '#e15759', '#76b7b2', '#59a14f',
+            '#edc949', '#af7aa1', '#ff9da7', '#9c755f', '#bab0ac'
+        ];
+        return labels.map((label, index) => colors[index % colors.length]);
+    }
+
+    try {
+        new Chart(ctx1, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(proxyData),
+                datasets: [{
+                    data: Object.values(proxyData),
+                    backgroundColor: generateColors(Object.keys(proxyData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: Object.keys(debtData),
+                datasets: [{
+                    data: Object.values(debtData),
+                    backgroundColor: generateColors(Object.keys(debtData))
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Debt List',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Error rendering charts:", error);
+    }
+
+    const tableData = 
+        { date: "2025-03-17", student: "ali", proxyFor: "93" },
+        { date: "2025-03-17", student: "divya", proxyFor: "59" },
+        { date: "2025-03-17", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "ankit", proxyFor: "77" },
+        { date: "2025-03-11", student: "arya", proxyFor: "78" },
+        { date: "2025-03-11", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "divyansh", proxyFor: "91" },
+        { date: "2025-03-10", student: "divya ", proxyFor: "59" },
+        { date: "2025-03-10", student: "songram", proxyFor: "111 and 94" },
+        { date: "2025-03-10", student: "niki ", proxyFor: "88" },
+        { date: "2025-03-05", student: "shruti", proxyFor: "pran-53" },
+        { date: "2025-03-05", student: "songram", proxyFor: "anki-65 :Cs" },
+        { date: "2025-03-04", student: "songram", proxyFor: "88 " },
+        { date: "2025-03-03", student: "shruti", proxyFor: "93 arya : EM" },
+        { date: "2025-03-03", student: "Priyanshu", proxyFor: "88-shari : EM" },
+        { date: "2025-03-03", student: "adatiya", proxyFor: "65-anki : EM" },
+        { date: "2025-02-12", student: "ankit", proxyFor: "shari-88 : EM" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Niki : MTH" },
+        { date: "2025-02-11", student: "Kewal", proxyFor: "Niki : PHY" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Ali : EM" },
+        { date: "2025-02-11", student: "Shtuti", proxyFor: "111 : EM" },
+        { date: "2025-02-11", student: "Aarya", proxyFor: "Niki : EM" },
+        { date: "2025-02-10", student: "Aarya", proxyFor: "Shruti-59" },
+        { date: "2025-02-10", student: "niki", proxyFor: "Shruti & Pranmay : CS" },
+        { date: "2025-02-10", student: "Sangram", proxyFor: "Ankit : CS" },
+        { date: "2025-02-05", student: "niki-46", proxyFor: "Ali-77" },
+        { date: "2025-02-05", student: "Ravindra", proxyFor: "Divyansh-94" },
+    ];
+
+    const tbody = document.getElementById('proxyTableBody');
+    tbody.innerHTML = tableData.map(row => `
+        <tr>
+            <td>${row.date}</td>
+            <td>${row.student}</td>
+            <td>${row.proxyFor}</td>
+        </tr>
+    `).join('');
+   </script>
+</body>
+</html>
+xyFor}</td>
+        </tr>
+    `).join('');
+   </script>
+</body>
+</html>
+
+        console.error("Error rendering charts:", error);
+    }
+
+    const tableData = 
+        { date: "2025-03-17", student: "ali", proxyFor: "93" },
+        { date: "2025-03-17", student: "divya", proxyFor: "59" },
+        { date: "2025-03-17", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "ankit", proxyFor: "77" },
+        { date: "2025-03-11", student: "arya", proxyFor: "78" },
+        { date: "2025-03-11", student: "priyanshu", proxyFor: "88" },
+        { date: "2025-03-11", student: "divyansh", proxyFor: "91" },
+        { date: "2025-03-10", student: "divya ", proxyFor: "59" },
+        { date: "2025-03-10", student: "songram", proxyFor: "111 and 94" },
+        { date: "2025-03-10", student: "niki ", proxyFor: "88" },
+        { date: "2025-03-05", student: "shruti", proxyFor: "pran-53" },
+        { date: "2025-03-05", student: "songram", proxyFor: "anki-65 :Cs" },
+        { date: "2025-03-04", student: "songram", proxyFor: "88 " },
+        { date: "2025-03-03", student: "shruti", proxyFor: "93 arya : EM" },
+        { date: "2025-03-03", student: "Priyanshu", proxyFor: "88-shari : EM" },
+        { date: "2025-03-03", student: "adatiya", proxyFor: "65-anki : EM" },
+        { date: "2025-02-12", student: "ankit", proxyFor: "shari-88 : EM" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Niki : MTH" },
+        { date: "2025-02-11", student: "Kewal", proxyFor: "Niki : PHY" },
+        { date: "2025-02-11", student: "Ankit", proxyFor: "Ali : EM" },
+        { date: "2025-02-11", student: "Shtuti", proxyFor: "111 : EM" },
+        { date: "2025-02-11", student: "Aarya", proxyFor: "Niki : EM" },
+        { date: "2025-02-10", student: "Aarya", proxyFor: "Shruti-59" },
+        { date: "2025-02-10", student: "niki", proxyFor: "Shruti & Pranmay : CS" },
+        { date: "2025-02-10", student: "Sangram", proxyFor: "Ankit : CS" },
+        { date: "2025-02-05", student: "niki-46", proxyFor: "Ali-77" },
+        { date: "2025-02-05", student: "Ravindra", proxyFor: "Divyansh-94" },
+    ];
+
+    const tbody = document.getElementById('proxyTableBody');
+    tbody.innerHTML = tableData.map(row => `
+        <tr>
+            <td>${row.date}</td>
+            <td>${row.student}</td>
+            <td>${row.proxyFor}</td>
+        </tr>
+    `).join('');
+   </script>
+</body>
+</html>
+xyFor}</td>
         </tr>
     `).join('');
    </script>
